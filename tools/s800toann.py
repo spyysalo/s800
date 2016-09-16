@@ -24,7 +24,7 @@ def main(argv):
 
     for d in documents:
         with(open(path.join(outdir, d.PMID+'.txt'), 'wt')) as out:
-            print(d.text, file=out)
+            out.write(d.text)
         with(open(path.join(outdir, d.PMID+'.ann'), 'wt')) as out:
             print('\n'.join(d.to_standoff()), file=out)
 

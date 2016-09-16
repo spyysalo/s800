@@ -26,4 +26,12 @@ fi
 
 mkdir -p "$OUTDIR"
 
+# Initialize to empty
+cut -f 1,2 original-data/pubmedid.tsv | perl -pe 's/PMID://' \
+    | while read s i; do
+    cp original-data/abstracts/$s.txt standoff/$i.txt
+    touch standoff/$i.ann
+done
+
+# Convert files with annotations
 python tools/s800toann.py "$DATA" "$TEXTDIR" "$OUTDIR"
