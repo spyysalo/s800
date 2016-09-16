@@ -8,3 +8,4 @@ Tools for working with the S800 corpus (http://species.jensenlab.org/).
     mkdir original-data
     tar xzf S800-1.0.tar.gz -C original-data
     ./convert_s800.sh original-data standoff
+    ./split_s800.sh
