@@ -13,7 +13,7 @@ Tools for working with the S800 corpus (http://species.jensenlab.org/).
 ## Convert standoff to CoNLL format
 
     mkdir conll
-    git clone git@github.com:spyysalo/standoff2conll.git
+    git clone https://github.com/spyysalo/standoff2conll.git
     for i in train devel test; do
-        python standoff2conll/standoff2conll.py split-standoff/$i > conll/$i.tsv
+        python3 standoff2conll/standoff2conll.py split-standoff/$i > conll/$i.tsv
     done
