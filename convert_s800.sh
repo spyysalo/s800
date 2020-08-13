@@ -29,8 +29,8 @@ mkdir -p "$OUTDIR"
 # Initialize to empty
 cut -f 1,2 original-data/pubmedid.tsv | perl -pe 's/PMID://' \
     | while read s i; do
-    cp original-data/abstracts/$s.txt standoff/$i.txt
-    touch standoff/$i.ann
+    cp original-data/abstracts/$s.txt "$OUTDIR"/$i.txt
+    touch "$OUTDIR"/$i.ann
 done
 
 # Convert files with annotations
