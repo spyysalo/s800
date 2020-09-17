@@ -27,9 +27,9 @@ fi
 mkdir -p "$OUTDIR"
 
 # Initialize to empty
-cut -f 1,2 original-data/pubmedid.tsv | perl -pe 's/PMID://' \
+cut -f 1,2 "$S800DIR"/pubmedid.tsv | perl -pe 's/PMID://' \
     | while read s i; do
-    cp original-data/abstracts/$s.txt "$OUTDIR"/$i.txt
+    cp "$S800DIR"/abstracts/$s.txt "$OUTDIR"/$i.txt
     touch "$OUTDIR"/$i.ann
 done
 
